@@ -52,7 +52,7 @@ export default function Data() {
         }
 
         try {
-            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(q)}&limit=5&appid=${API_KEY}&lang=ru`;
+            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(q)}&limit=5&appid=${API_KEY}`;
             const r = await fetch(url);
             if (!r.ok) throw new Error();
             const data = await r.json();
