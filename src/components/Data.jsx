@@ -61,7 +61,7 @@ export default function Data() {
 
             setSuggestions(cleaned);
             suggestCache.current[key] = { ts: now, data: cleaned };
-        } catch {  }
+        } catch { /* silence */ }
     };
 
     const onChange = (e) => {
