@@ -19,7 +19,7 @@ Powered by [OpenWeather API](https://openweathermap.org/).
 
 ## 🚀 Live Demo
 The app is deployed on GitHub Pages:  
-👉 [Weather App on GitHub Pages](https://wedelweg.github.io/weather-app/)
+👉 [Weather App on GitHub Pages](https://wedelweg.github.io/weather-application/)
 
 ## 🛠 Tech Stack
 - [React](https://react.dev/)
