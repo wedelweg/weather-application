@@ -1,7 +1,7 @@
 // src/components/Data.jsx
 import React, { useRef, useState } from "react";
 
-const API_KEY = import.meta.env.VITE_OW_KEY; // ключ в .env → VITE_OW_KEY=...
+const API_KEY = import.meta.env.VITE_OW_KEY;
 
 // конвертеры
 const hPaToMm = (hpa) => Math.round(hpa * 0.75006);
@@ -14,10 +14,9 @@ export default function Data() {
     const [error, setError] = useState("");
 
     const typingTimer = useRef(null);
-    const suggestCache = useRef({}); // {queryLower: {ts, data}}
-    const SUGGEST_TTL = 120_000;     // 2 минуты
+    const suggestCache = useRef({});
+    const SUGGEST_TTL = 120_000;
 
-    // --- запрос погоды по координатам ---
     const fetchWeatherByCoords = async (lat, lon) => {
         try {
             setError("");
@@ -28,7 +27,6 @@ export default function Data() {
         } catch (e) { setError(e.message); }
     };
 
-    // --- запрос погоды по строке (названию города) ---
     const fetchWeatherByCity = async (q) => {
         try {
             setError("");
@@ -39,7 +37,6 @@ export default function Data() {
         } catch (e) { setError(e.message); }
     };
 
-    // --- подсказки городов ---
     const loadSuggestions = async (q) => {
         const key = q.toLowerCase().trim();
         if (key.length < 2) { setSuggestions([]); return; }
@@ -65,7 +62,7 @@ export default function Data() {
 
             setSuggestions(cleaned);
             suggestCache.current[key] = { ts: now, data: cleaned };
-        } catch { /* молча */ }
+        } catch {  }
     };
 
     const onChange = (e) => {
@@ -81,8 +78,8 @@ export default function Data() {
     };
 
     const selectSuggestion = (s) => {
-        setCity(s.display);     // при выборе вставляем название в input
-        setSuggestions([]);     // убираем подсказки
+        setCity(s.display);
+        setSuggestions([]);
         fetchWeatherByCoords(s.lat, s.lon);
     };
 
