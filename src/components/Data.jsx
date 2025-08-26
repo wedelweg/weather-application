@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 
 const API_KEY = import.meta.env.VITE_OW_KEY;
 
-// конвертеры
 const hPaToMm = (hpa) => Math.round(hpa * 0.75006);
 const mToKm   = (m)   => (m / 1000).toFixed(0);
 
