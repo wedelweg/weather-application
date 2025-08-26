@@ -1,41 +1,41 @@
-/* Обёртка на всю высоту, но без жёсткой фиксации контента по центру */
+
 .wrapper {
-    min-height: 100vh;                 /* было height: 100vh */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;            /* чтобы карточка могла расти вниз */
-    padding: 48px 16px;                 /* отступы от краёв */
+    align-items: flex-start;
+    padding: 48px 16px;
 
     background: linear-gradient(45deg, #2db0e0 0%, #6028a8 100%);
 }
 
-/* Карточка приложения: колоночная, без фикс-высоты */
+
 .main {
-    width: min(1000px, 92vw);           /* адаптивная ширина */
+    width: min(1000px, 92vw);
     background: #2a6bb1;
     box-shadow: 0 2px 80px -20px rgba(0, 0, 0, .5);
     border-radius: 16px;
     /*overflow: hidden;*/
-    display: flex;                      /* ключ: вертикальная колонка */
-    flex-direction: column;             /* hero сверху, форма ниже */
+    display: flex;
+    flex-direction: column;
 }
 
-/* HERO: без фикс 55vh; даём разумные размеры и затемнение под текст */
+
 .info {
     position: relative;
-    min-height: 260px;                  /* минимальная высота */
-    height: 40vh;                       /* адаптивная высота */
+    min-height: 260px;
+    height: 40vh;
     background: url("./img/polygon.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;                        /* белый текст на фото */
+    color: #fff;
     border: 2px solid #1f1f1f;
-    border-bottom: none;                /* с формой стык без двойной рамки */
+    border-bottom: none;
 }
 
-/* лёгкая вуаль, чтобы текст читался на любом фото */
+
 .info::after {
     content: "";
     position: absolute;
@@ -43,13 +43,13 @@
     background: rgba(0, 0, 0, .35);
 }
 
-/* чтобы заголовок был поверх вуали */
+
 .info > * { position: relative; z-index: 1; }
 
 .info h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 6px; }
 .info p  { color: #e4e4e4; font-weight: 600; margin: 0; }
 
-/* Форма: без фикс 55vh; нормальные отступы */
+
 .form {
     padding: 24px 40px 32px;
     border: 2px solid #113a65;
@@ -57,12 +57,12 @@
     border-radius: 0 0 10px 10px;
 }
 
-/* Поле и кнопка — на всю ширину контейнера, красиво на мобильных */
+
 input[type="text"] {
     background-color: transparent;
     border: 0;
     border-bottom: 2px solid #113a65;
-    width: 100%;                       /* было 50% */
+    width: 100%;                       /* was 50% */
     max-width: 520px;
     padding-bottom: 6px;
     color: #fff;
@@ -173,7 +173,7 @@ button:active { border-bottom: 2px solid transparent; position: relative; top: 2
 .dot {
     width: 34px;
     height: 34px;
-    background: #ea7a55;          /* индикатор */
+    background: #ea7a55;
     border-radius: 50%;
     display: inline-block;
 }

@@ -7,7 +7,7 @@ import Data from './components/Data.jsx';
 const App = () => {
     return (
         <div className="wrapper">
-            <div className="main main-col">   {/* 👈 добавили класс для колонок */}
+            <div className="main main-col">
                 <section className="info">
                     <Info />
                 </section>
