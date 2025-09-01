@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "framer-motion": "^12.23.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
@@ -25,12 +27,5 @@
     "globals": "^16.3.0",
     "vite": "^7.1.2"
   },
-  "homepage": "https://wedelweg.github.io/weather-app",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
+  "homepage": "https://wedelweg.github.io/weather-app"
 }
